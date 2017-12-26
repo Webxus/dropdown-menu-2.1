@@ -10,14 +10,8 @@
 
 // Видимость выпадающего меню следует регулировать классом active на теге <div class="wrapper-dropdown">.
 
-const myProfile = document.getElementsByClassName('wrapper-dropdown')['0'],
-listOf = document.getElementsByTagName('li');
+const menuList = document.getElementsByClassName('wrapper-dropdown');
 
-const showMenu = () => {
-	if (myProfile.className !== 'wrapper-dropdown') {
-		myProfile.className = 'wrapper-dropdown';
-	}
-  myProfile.className = 'active';
-};
-
-myProfile.onclick = showMenu;
+menuList[0].onclick = function() {
+  menuList[0].classList.toggle('active');
+}
